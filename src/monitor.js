@@ -19,7 +19,7 @@ var mailOptions = config.mailOptions;
 
 
 schedule.scheduleJob('0 * * * * *', function () {
-    monitorClaimTime(config.producerName)
+    monitorClaimTime(config.nodeos.producerName)
 })
 
 function sendMail(type, message){
