@@ -1,5 +1,5 @@
 let Eos = require('eosjs');
-let config = require('./config.json');
+let config = require('./config.js').monitor_clamer;
 let schedule = require("node-schedule");
 var nodemailer = require('nodemailer');
 
@@ -36,7 +36,6 @@ function sendMail(type, message){
             return console.log(error);
         }
         console.log('Message sent: ' + info.response);
-
     });
 }
 
