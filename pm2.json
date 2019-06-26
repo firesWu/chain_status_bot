@@ -1,0 +1,41 @@
+{
+	"apps": [{
+			"name": "bp_monitor",
+			"script": "./src/bp_monitor.js",
+			"node_args": "--max_old_space_size=1024",
+			"instances": 1,
+			"max_memory_restart": "512M",
+			"autorestart": true,
+			"merge_logs": true,
+			"watch": ["src"],
+			"instance_var": "INSTANCE_ID",
+			"watch_options": {
+				"usePolling": true
+			},
+			"env": {
+				"NODE_ENV": "production"
+			},
+			"error_file": "./logs/pm2-bp-err.log",
+			"out_file": "./logs/pm2-bp-out.log"
+        },
+        {
+			"name": "node_monitor",
+			"script": "./src/node_monitor.js",
+			"node_args": "--max_old_space_size=1024",
+			"instances": 1,
+			"max_memory_restart": "512M",
+			"autorestart": true,
+			"merge_logs": true,
+			"watch": ["src"],
+			"instance_var": "INSTANCE_ID",
+			"watch_options": {
+				"usePolling": true
+			},
+			"env": {
+				"NODE_ENV": "production"
+			},
+			"error_file": "./logs/pm2-node-err.log",
+			"out_file": "./logs/pm2-node-out.log"
+		}
+	]
+}
