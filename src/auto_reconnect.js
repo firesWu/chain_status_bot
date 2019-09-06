@@ -9,7 +9,7 @@ let eos = Eos({
     chainId: config.nodeos.chainId
 });
 
-let alertTime = 300000
+let alertTime = 100000
 let timeoffer = - (new Date().getTimezoneOffset()) * 60000
 
 var transporter = nodemailer.createTransport(config.smtp)
